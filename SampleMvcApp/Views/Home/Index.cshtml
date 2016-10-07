@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Auth0 MVC Core Sample</h2>
+
+        @if (User.Identity.IsAuthenticated) {
+            <p>Hello @User.Identity.Name! </p>
+            <p>Click @Html.ActionLink("here", "Profile") to access your profile!</p>
+            <p>
+                You should not be able to access the API with your cookie authentication:
+                <br/>
+                <a href="/api/values">Get Values via API</a>
+                <br />
+                <a href="/api/values/5">Get Value 5 via API</a>
+            </p>
+            <p>
+                Use your ID Token to access via PostMan or Fiddler
+                <br />                                            
+                <textarea>@ViewBag.IdToken</textarea>
+            </p>
+        }
+        else
+        {
+            <p>You are not authenticated. Press the <b>Login</b> button to sign in.</p>
+        }
+    </div>
+</div>

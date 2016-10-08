@@ -68,11 +68,11 @@ artifacts/
 *.pidb
 *.svclog
 *.scc
-
 # Chutzpah Test files
 _Chutzpah*
 
 # Visual C++ cache files
+
 ipch/
 *.aps
 *.ncb
@@ -251,4 +251,4 @@ paket-files/
 .idea/
 *.sln.iml
 
-appsettings.debug.json
+appsettings.Development.json

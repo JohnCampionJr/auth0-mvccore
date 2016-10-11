@@ -136,6 +136,13 @@ namespace SampleMvcApp.Code
 
                 options.Events = new OpenIdConnectEvents
                 {
+                    OnRedirectToIdentityProvider = context =>
+                    {
+                        context.Response.Redirect(new PathString("/Account/Login"));
+                        context.HandleResponse();
+
+                        return Task.FromResult(0);
+                    },
                     OnTicketReceived = context => {
                         // Get the ClaimsIdentity
                         var identity = context.Principal.Identity as ClaimsIdentity;
